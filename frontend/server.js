@@ -14,6 +14,10 @@ app.listen(8080, function() {
     console.log('listening on 8080')
   })
 
+  app.get('/status', function (req, res) {
+    res.send('Frontend App - Running')
+  })
+
   app.get('/', function (req, res) {
     //res.send('Hello World')
     request('http://msg-processor:8080/messages', function(err, response, body){
